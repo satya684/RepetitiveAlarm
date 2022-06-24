@@ -9,7 +9,7 @@ import timber.log.Timber
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class AlarmReceiver:BroadcastReceiver() {
+class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         val timeInMillis = intent!!.getLongExtra(Constants.EXTRA_EXACT_ALARM_TIME, 0L)
         when (intent.action) {
@@ -23,6 +23,7 @@ class AlarmReceiver:BroadcastReceiver() {
             }
         }
     }
+
     private fun buildNotification(context: Context, title: String, message: String) {
         Notify
             .with(context)
@@ -42,6 +43,7 @@ class AlarmReceiver:BroadcastReceiver() {
     }
 
     private fun convertDate(timeInMillis: Long): String =
-        DateFormat.format("dd/MM/yyyy hh:mm:ss", timeInMillis).toString()
+        DateFormat.format("dd/MM/yyyy hh:mm", timeInMillis).toString()
+//        DateFormat.format("dd/MM/yyyy hh:mm:ss", timeInMillis).toString() TODO uncomment this if need second in time and comment above lin
 
 }

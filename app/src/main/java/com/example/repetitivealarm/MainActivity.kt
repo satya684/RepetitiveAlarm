@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
         Calendar.getInstance().apply {
             this.set(Calendar.SECOND, 0)
             this.set(Calendar.MILLISECOND, 0)
-            DatePickerDialog(
+            /*DatePickerDialog(
                 this@MainActivity,
                 0,
                 { _, year, month, day ->
                     this.set(Calendar.YEAR, year)
                     this.set(Calendar.MONTH, month)
-                    this.set(Calendar.DAY_OF_MONTH, day)
+                    this.set(Calendar.DAY_OF_MONTH, day)*/
                     TimePickerDialog(
                         this@MainActivity,
                         0,
@@ -49,11 +49,11 @@ class MainActivity : AppCompatActivity() {
                         this.get(Calendar.MINUTE),
                         false
                     ).show()
-                },
+                }/*,
                 this.get(Calendar.YEAR),
                 this.get(Calendar.MONTH),
                 this.get(Calendar.DAY_OF_MONTH)
             ).show()
-        }
+        }*/
     }
 }
